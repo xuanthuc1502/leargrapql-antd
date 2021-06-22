@@ -1,0 +1,55 @@
+# Write your query or mutation here
+query Myquery {
+  books {
+    id
+    name
+  }
+}
+
+query MyAuthor {
+  authors {
+    id
+    name
+    books {
+      name
+    }
+  }
+}
+
+query myBook{
+  book(id:1) {
+    id
+    name
+    genre
+    author{
+      name
+    }
+  }
+}
+
+query Author {
+  author(id:2){
+    name
+    books {
+      name
+    }
+  }
+}
+
+mutation CreateBook{
+  createBook(id:4, name: "damm right", genre:"kinh te", authorId:1) {
+    name
+    author {
+      name
+    }
+  }
+}
+
+mutation CreateAuthor{
+  createAuthor(name: "warent", age:90) {
+    name
+    author {
+      name
+    }
+  }
+}
