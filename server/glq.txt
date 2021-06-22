@@ -1,12 +1,12 @@
 # Write your query or mutation here
-query Myquery {
+query MyBooks {
   books {
     id
     name
   }
 }
 
-query MyAuthor {
+query MyAuthors {
   authors {
     id
     name
@@ -17,7 +17,7 @@ query MyAuthor {
 }
 
 query myBook{
-  book(id:1) {
+  book(id:"60d0082f1c5f54626089d0a7") {
     id
     name
     genre
@@ -28,7 +28,8 @@ query myBook{
 }
 
 query Author {
-  author(id:2){
+  author(id:"60d0002d3c75dd6169cf22b6"){
+    id
     name
     books {
       name
@@ -37,19 +38,19 @@ query Author {
 }
 
 mutation CreateBook{
-  createBook(id:4, name: "damm right", genre:"kinh te", authorId:1) {
+  createBook(name: "test", genre:"FA TA", authorId:"60d066595650c50114e3a456") {
+    id
     name
     author {
+      id
       name
     }
   }
 }
 
 mutation CreateAuthor{
-  createAuthor(name: "warent", age:90) {
+  createAuthor(name: "jessi Levermore", age:120) {
+    id
     name
-    author {
-      name
-    }
   }
 }
